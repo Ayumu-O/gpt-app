@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Extension</title>
+  <link rel="stylesheet" type="text/css" href="popup.css" />
+</head>
+
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <h3>保存済みプロンプト</h3>
+      <ul id="promptList"></ul>
+    </div>
+    <div id="mainContent">
+      <!-- APIキー設定用のセクション -->
+      <div class="input-group">
+        <div style="display: flex; align-items: center;">
+          <label for="apiKey">APIキーを設定:</label>
+          <span id="apiKeyCheck" style="display: none; color: green; margin-left: 10px;">&#x2714;</span>
+        </div>
+        <input id="apiKey" type="password" placeholder="APIキーを入力">
+        <button id="saveApiKeyBtn">保存</button>
+      </div>
+
+      <!-- システムプロンプト -->
+      <div class="input-group">
+        <label for="systemPrompt">システムプロンプト:</label>
+        <textarea id="systemPrompt" rows="3"></textarea>
+      </div>
+      <button id="saveSystemPromptBtn">システムプロンプトを保存</button>
+
+      <!-- ユーザープロンプト -->
+      <div class="input-group">
+        <label for="userPrompt">ユーザープロンプト:</label>
+        <textarea id="userPrompt" rows="3"></textarea>
+      </div>
+
+      <!-- 現在のページ内容を取得するボタン -->
+      <button id="getPageContentBtn">現在のページ内容を取得</button>
+
+      <!-- 送信ボタン -->
+      <button id="sendBtn">送信</button>
+
+      <!-- 応答表示 -->
+      <div id="response"></div>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script src="popup.js"></script>
+</body>
+
+</html>
